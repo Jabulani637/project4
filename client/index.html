@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Name Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Enter your name</h1>
+
+    <form id="nameForm" autocomplete="on">
+      <label for="name">Name</label>
+      <input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="..."
+        required
+      />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="result" class="result" aria-live="polite"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById('nameForm');
+    const nameInput = document.getElementById('name');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim();
+      result.textContent = name ? `Hello, ${name}!` : '';
+    });
+  </script>
+</body>
+</html>
+
