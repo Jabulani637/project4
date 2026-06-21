@@ -38,7 +38,7 @@
       result.textContent = '';
 
       try {
-        const resp = await fetch('http://localhost:3000/api/name', {
+        const resp = await fetch('https://project4-hkr4.onrender.com/api/name', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name })
