@@ -1,4 +1,5 @@
-const { Pool } = require("pg");
+const pg = require("pg");
+const { Pool } = pg;
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -8,4 +9,5 @@ const pool = new Pool({
 });
 
 module.exports = pool;
+
 
